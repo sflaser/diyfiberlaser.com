@@ -1,68 +1,43 @@
-# DIY Laser Machine Landing Page
+# SKY FIRE - DIY Laser Machine Landing Page
 
-This is a responsive landing page for a DIY Laser Machine platform that offers various services related to building and operating DIY laser machines.
+这是SKY FIRE DIY激光切割机的营销网站源码。该网站提供了有关如何构建自己的专业激光机器的信息和资源。
 
-## Features
+## 功能
 
-- Modern, responsive design
-- Mobile-friendly layout with hamburger menu
-- Clear call-to-action buttons
-- Structured content flow
-- Comprehensive services section
-- Sticky navigation
-- Testimonial showcase
-- Step-by-step process outline
-- Detailed footer with organized links
+- 响应式设计，适配各种设备
+- 专业的布局和设计
+- 视频嵌入
+- 交互式轮播图展示社区项目
+- 详细的价值主张和特色服务展示
+- 客户评价展示
 
-## Services Offered
+## 部署说明
 
-- DIY Fiber Metal Tube Laser Cutter
-- DIY Fiber Metal Sheet Laser Cutter
-- DIY Fiber Laser Metal Sheet & Tube Cutting Machine
-- DIY Laser Cleaning Machine
-- DIY Fiber Laser Welder
-- Q&A for DIY Fiber Laser
-- Forum for DIY Fiber Laser
-- DIY Laser Support Packages
-- DIY Contest
+### 方法1：通过GitHub Pages部署
 
-## File Structure
+1. 在GitHub上创建一个新的仓库
+2. 将此代码推送到该仓库
+   ```
+   git remote add origin https://github.com/您的用户名/您的仓库名.git
+   git push -u origin main
+   ```
+3. 在GitHub仓库设置中启用GitHub Pages功能，选择main分支作为源
 
-- `index.html` - Main HTML structure
-- `styles.css` - CSS styling
-- `script.js` - JavaScript functionality
+### 方法2：通过Cloudflare Pages部署
 
-## Usage
+1. 创建Cloudflare账户并登录Cloudflare Dashboard
+2. 进入Pages部分，点击"创建项目"
+3. 连接到您的GitHub仓库
+4. 保持默认设置，点击"保存并部署"
 
-1. Clone or download this repository
-2. Open `index.html` in your browser to view the landing page
-3. Customize content, images, and colors as needed for your specific use case
+## 自定义
 
-## Customization
+您可以修改以下内容来自定义网站：
 
-### To replace images:
-Add your own images to the project and update the image paths in the HTML file.
+- `index.html` - 主要HTML内容和样式
+- `image/` - 图片和视频资源
+- `script.js` - JavaScript功能
 
-### To change colors:
-Edit the color values in the `styles.css` file.
+## 许可证
 
-### To update content:
-Modify the text content in the `index.html` file.
-
-### To add more services:
-Add new service entries in both the navigation and services section of the `index.html` file.
-
-## Responsive Design
-
-The landing page is fully responsive:
-- Desktop: Full navigation and layout
-- Tablet: Adjusted layout with hamburger menu
-- Mobile: Simplified layout with optimized content display
-
-## License
-
-MIT License
-
-## Credits
-
-Created for DIY Laser Machine Marketing. 
+仅供个人学习和参考，未经授权不得用于商业用途。 
