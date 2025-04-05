@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKY FIRE - Build Your Own Professional Laser Machine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            padding: 12px 24px;
+            transition: all 0.3s ease;
+        }
+
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
+        /* Simple Header */
+        .simple-header {
+            padding: 20px 0;
+            background-color: transparent;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .logo h1 {
+            margin: 0;
+            color: #ff8c00;
+            font-size: 42px;
+            font-weight: 800;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,140,0,0.05) 100%); padding: 80px 0; text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ff8c00;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #333333;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .video-container div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .video-container div div {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ff8c00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(255, 140, 0, 0.2);
+        }
+
+        .video-container div div div {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 25px;
+            border-color: transparent transparent transparent white;
+            margin-left: 5px;
+        }
+
+        .video-container p {
+            font-size: 18px;
+            color: #333333;
+        }
+
+        /* Value Proposition Section */
+        .value-prop {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+
+        .value-prop h2 {
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            color: #333333;
+            text-align: center;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .value-item {
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+            border-left: 3px solid #ff8c00;
+            border-top: 1px solid #f0f0f0;
+            border-right: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .value-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .value-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ff8c00;
+        }
+
+        .value-item p {
+            color: #333333;
+        }
+
+        /* Free Services Section */
+        .free-services {
+            background-color: #fff5e6;
+            padding: 80px 0;
+        }
+
+        .free-services h2 {
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+        }
+
+        .service-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border-left: 5px solid #ff8c00;
+            opacity: 1;
+            transform: translateY(0);
+            border-top: 5px solid #fff5e6;
+            border-right: 5px solid #fff5e6;
+            border-bottom: 5px solid #fff5e6;
+        }
+
+        .service-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .service-box h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-right: 70px;
+        }
+
+        .service-box p {
+            color: #333333;
+        }
+
+        .free-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .bonus-box {
+            background-color: #fff9e6;
+            border-left: 5px solid #e67e22;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            max-width: 1000px;
+            margin: 40px auto 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .bonus-box h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #e67e22;
+            font-weight: 700;
+        }
+
+        .bonus-box p {
+            color: #333333;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .bonus-box .free-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Process Flow Section */
+        .process-flow {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+
+        .process-flow h2 {
+            font-size: 38px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            text-align: center;
+            color: #333333;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .step-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .step-number {
+            background-color: #ff8c00;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-right: 25px;
+            flex-shrink: 0;
+            z-index: 2;
+        }
+
+        .step-card {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex-grow: 1;
+        }
+
+        .step-card h3 {
+            font-size: 22px;
+            color: #ff8c00;
+            margin-bottom: 15px;
+        }
+
+        .step-card p {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .step-features {
+            list-style-type: none;
+        }
+
+        .step-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .step-features li:before {
+            content: "✓";
+            color: #ff8c00;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        .step-arrow {
+            font-size: 24px;
+            color: #ff8c00;
+            margin: 20px 0;
+            display: block;
+            text-align: center;
+        }
+
+        /* CTA Section */
+        .cta {
+            background-color: #f4f4f4;
+        }
+
+        .cta-box {
+            background-color: #ff8c00;
+            background: linear-gradient(135deg, #ff8c00, #e67300);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.15);
+        }
+
+        .cta-box h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(224, 116, 0, 0.2);
+        }
+
+        .cta-box p {
+            margin-bottom: 40px;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .btn-cta {
+            background-color: white;
+            color: #ff8c00;
+            font-size: 20px;
+            padding: 15px 50px;
+            font-weight: 700;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(224, 116, 0, 0.2);
+        }
+
+        .btn-cta:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #fff;
+            padding: 80px 0;
+        }
+
+        .testimonials h2 {
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            overflow: hidden;
+        }
+
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 1;
+            transform: translateY(0);
+            border: 1px solid #eee;
+        }
+
+        .star-rating {
+            margin-bottom: 15px;
+            color: #ff8c00;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            flex-grow: 1;
+        }
+
+        .testimonial-content p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .testimonial-author h4 {
+            margin-bottom: 5px;
+            color: #ff8c00;
+        }
+
+        .testimonial-author p {
+            margin: 0;
+            font-style: normal;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #ff8c00;
+        }
+
+        /* Value Summary Section */
+        .value-summary {
+            background-color: #fff5e6;
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h4 {
+            color: #ff8c00;
+            font-size: 18px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .section-header div {
+            width: 80px;
+            height: 4px;
+            background-color: #ff8c00;
+            margin: 0 auto;
+        }
+
+        .value-table {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .value-table-row {
+            display: flex;
+            border-bottom: 1px solid #eee;
+        }
+
+        .value-table-row.header {
+            background-color: #ff8c00;
+            color: white;
+            font-weight: 700;
+        }
+
+        .value-table-row.total {
+            background-color: #f8f8f8;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .value-service {
+            flex: 2;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .value-worth, .value-price {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .value-price {
+            color: #e74c3c;
+        }
+
+        .value-table-row.total .value-price {
+            font-size: 22px;
+        }
+
+        .value-note {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background-color: #fff;
+        }
+
+        .final-cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .final-cta-box h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .final-cta-box p {
+            margin-bottom: 30px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .btn-main {
+            background-color: #ff8c00;
+            color: white;
+            font-size: 18px;
+            padding: 15px 40px;
+            font-weight: 700;
+            border-radius: 30px;
+        }
+
+        .btn-main:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Simple Footer */
+        .simple-footer {
+            background-color: #1a1a2e;
+            background: linear-gradient(to bottom, #16213e, #1a1a2e);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .simple-footer div {
+            margin-bottom: 20px;
+        }
+
+        .simple-footer h3 {
+            color: #ff8c00;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .simple-footer p {
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Countdown Styles */
+        .countdown {
+            margin-bottom: 20px;
+        }
+        
+        .countdown p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .countdown-timer {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .countdown-timer span {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero h2 {
+                font-size: 20px;
+            }
+            
+            .video-container {
+                height: 350px;
+            }
+            
+            .services-grid,
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .step-container {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .testimonial-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cta-box,
+            .final-cta-box {
+                padding: 30px 20px;
+            }
+            
+            .cta-box h2,
+            .final-cta-box h2,
+            section h2 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero h2 {
+                font-size: 18px;
+            }
+            
+            .video-container {
+                height: 250px;
+            }
+            
+            .service-box,
+            .bonus-box,
+            .value-table {
+                padding: 20px;
+            }
+            
+            .service-box h3,
+            .bonus-box h3 {
+                padding-right: 0;
+            }
+            
+            .free-tag {
+                position: static;
+                display: inline-block;
+                margin-top: 10px;
+            }
+            
+            .value-table-row {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+            
+            .value-service, 
+            .value-worth, 
+            .value-price {
+                text-align: center;
+                padding: 5px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Simple Header -->
+        <header class="simple-header" style="padding: 20px 0; background-color: transparent; border-bottom: 1px solid rgba(0,0,0,0.06);">
+            <div class="logo" style="text-align: center;">
+                <h1 style="margin: 0; color: #ff8c00; font-size: 42px; font-weight: 800; font-family: 'Impact', 'Arial Black', sans-serif; letter-spacing: 2px;">SKY FIRE</h1>
+                <p style="margin: 10px 0 0; color: #333333; font-size: 18px; font-family: 'Montserrat', sans-serif; font-weight: 500;">Build Your Own Professional Laser Machine</p>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" style="background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,140,0,0.05) 100%); padding: 80px 0; text-align: center;">
+            <h1 style="font-size: 48px; font-weight: 800; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; color: #ff8c00;">BUILD YOUR OWN PROFESSIONAL LASER MACHINE</h1>
+            <p style="font-size: 24px; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; color: #333333;">Expert Guidance from SKY FIRE Without The High Costs</p>
+            <div class="video-container" style="max-width: 800px; margin: 0 auto 40px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); position: relative;">
+                <!-- 直接嵌入YouTube视频 -->
+                <iframe 
+                    width="100%" 
+                    height="450" 
+                    src="https://www.youtube.com/embed/ZIcTh1kjz68" 
+                    title="DIY Fiber Laser Tutorial" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    style="border: none; display: block;"
+                ></iframe>
+            </div>
+        </section>
+
+        <!-- Community Showcase Section -->
+        <section class="community-showcase" style="background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,140,0,0.03) 50%, rgba(255,255,255,1) 100%); padding: 80px 0;">
+            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                <h4 style="color: #ff8c00; font-size: 24px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;">OUR VIBRANT COMMUNITY</h4>
+                <h2 style="font-size: 42px; text-transform: uppercase; margin-bottom: 20px; color: #333333; font-weight: 800; letter-spacing: 1px;">AMAZING PROJECTS FROM BUILDERS LIKE YOU</h2>
+                <div style="width: 120px; height: 3px; background-color: #ff8c00; margin: 0 auto;"></div>
+                <p style="max-width: 700px; margin: 30px auto 0; color: #555555; font-size: 18px; line-height: 1.6;">See what's possible when you join our growing community of creators using Sky Fire Laser systems</p>
+            </div>
+            
+            <div class="community-carousel" style="max-width: 1000px; margin: 0 auto; position: relative;">
+                <div class="carousel-container" style="overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);">
+                    <div class="carousel-track" style="display: flex; transition: transform 0.5s ease;">
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.18.20.png" alt="Community Project 1" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.18.32.png" alt="Community Project 2" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.18.48.png" alt="Community Project 3" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.19.08.png" alt="Community Project 4" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.19.27.png" alt="Community Project 5" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.19.41.png" alt="Community Project 6" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.19.56.png" alt="Community Project 7" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.20.16.png" alt="Community Project 8" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.20.49.png" alt="Community Project 9" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.21.01.png" alt="Community Project 10" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.21.36.png" alt="Community Project 11" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%;">
+                            <img src="image/截屏2025-04-05 11.23.05.png" alt="Community Project 12" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn prev" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); background-color: rgba(255, 140, 0, 0.9); color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 28px; display: flex; align-items: center; justify-content: center; z-index: 10; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">&#10094;</button>
+                <button class="carousel-btn next" style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); background-color: rgba(255, 140, 0, 0.9); color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 28px; display: flex; align-items: center; justify-content: center; z-index: 10; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">&#10095;</button>
+                
+                <div class="carousel-dots" style="display: flex; justify-content: center; margin-top: 30px;">
+                    <!-- Dots will be dynamically added via JavaScript -->
+                </div>
+            </div>
+            
+            <div class="community-cta" style="margin-top: 50px; text-align: center;">
+                <a href="https://www.facebook.com/groups/998602455597977" class="btn-community" style="background-color: #ff8c00; color: white; font-size: 18px; padding: 12px 35px; font-weight: 600; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 3px 8px rgba(255, 140, 0, 0.2); text-transform: uppercase; letter-spacing: 1px;">JOIN OUR COMMUNITY</a>
+            </div>
+        </section>
+
+        <!-- Value Proposition Section -->
+        <section class="value-prop" style="background-color: #f8f8f8; padding: 80px 0;">
+            <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 40px; color: #333; text-align: center;">WHY BUILD YOUR OWN LASER MACHINE?</h2>
+            <div class="value-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
+                <div class="value-item" style="padding: 30px; background-color: white; border-radius: 8px; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00;">
+                    <div class="value-icon" style="font-size: 48px; margin-bottom: 20px;">💰</div>
+                    <h3 style="font-size: 22px; margin-bottom: 15px; color: #333;">Save Up To 70%</h3>
+                    <p style="color: #666;">Build a professional-grade machine at a fraction of commercial prices</p>
+                </div>
+                <div class="value-item" style="padding: 30px; background-color: white; border-radius: 8px; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00;">
+                    <div class="value-icon" style="font-size: 48px; margin-bottom: 20px;">🔧</div>
+                    <h3 style="font-size: 22px; margin-bottom: 15px; color: #333;">Full Customization</h3>
+                    <p style="color: #666;">Design exactly what you need for your specific projects</p>
+                </div>
+                <div class="value-item" style="padding: 30px; background-color: white; border-radius: 8px; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00;">
+                    <div class="value-icon" style="font-size: 48px; margin-bottom: 20px;">📚</div>
+                    <h3 style="font-size: 22px; margin-bottom: 15px; color: #333;">Learn Valuable Skills</h3>
+                    <p style="color: #666;">Gain technical knowledge that helps with maintenance and upgrades</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Free Services Section -->
+        <section class="free-services" style="background-color: #fff5e6; padding: 80px 0;">
+            <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 50px; text-align: center;">EVERYTHING YOU GET <span style="color: #ff8c00; font-weight: 700;">100% FREE</span></h2>
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto 40px;">
+                <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
+                    <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">🔍</div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free Component Selection Service</h3>
+                    <p style="color: #666;">Expert advice on choosing the right parts based on your budget and needs</p>
+                    <a href="https://alleriastore.com/pages/contact" style="position: absolute; top: 20px; right: 20px; background-color: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
+                </div>
+                <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
+                    <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">🛠️</div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free 3-Day Installation Support</h3>
+                    <p style="color: #666;">Live technical assistance throughout your building process</p>
+                    <a href="https://alleriastore.com/pages/sky-fire-support-packages-for-diy-fiber-laser-machines" style="position: absolute; top: 20px; right: 20px; background-color: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
+                </div>
+                <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
+                    <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">📝</div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free DIY Documentation</h3>
+                    <p style="color: #666;">Complete step-by-step guides, diagrams, and video tutorials</p>
+                    <a href="https://www.youtube.com/@Skyfirelaser" style="position: absolute; top: 20px; right: 20px; background-color: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
+                </div>
+                <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
+                    <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">👥</div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free Community Forum Access</h3>
+                    <p style="color: #666;">Join our community of DIY laser enthusiasts for ongoing support</p>
+                    <a href="https://www.facebook.com/groups/998602455597977" style="position: absolute; top: 20px; right: 20px; background-color: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
+                </div>
+            </div>
+            <div class="bonus-box" style="background-color: #fff9e6; border-left: 5px solid #e67e22; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; max-width: 1000px; margin: 40px auto 0;">
+                <h3 style="font-size: 28px; margin-bottom: 15px; color: #e67e22; font-weight: 700;">BONUS: DIY Laser Cutting Machine Kits Checklist</h3>
+                <p style="color: #666; font-size: 18px; line-height: 1.6;">Get our comprehensive component checklist to ensure you have everything needed for your build</p>
+                <a href="https://cdn.shopify.com/s/files/1/0651/8158/1563/files/Checklist_for_a_whole_laser_cutting_machine.pdf?v=1715934590" style="position: absolute; top: 20px; right: 20px; background-color: #e74c3c; color: white; padding: 8px 20px; border-radius: 30px; font-weight: 700; font-size: 16px; text-decoration: none; display: inline-block; animation: pulse 2s infinite;">FREE</a>
+            </div>
+        </section>
+
+        <!-- Process Flow Section -->
+        <section class="process-flow">
+            <h2>YOUR SIMPLE 3-STEP JOURNEY</h2>
+            
+            <div class="step-container">
+                <div class="step-number">1</div>
+                <div class="step-card">
+                    <h3>SELECT YOUR COMPONENTS</h3>
+                    <p>We'll help you choose the perfect components to match your budget and needs. Our free selection service saves you hours of research.</p>
+                    <ul class="step-features">
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Personalized component list
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Budget options available
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Sourcing assistance
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Contact us: <a href="mailto:info@sflaser.net" style="color: #ff8c00; text-decoration: none;">info@sflaser.net</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-arrow">▼</div>
+
+            <div class="step-container">
+                <div class="step-number">2</div>
+                <div class="step-card">
+                    <h3>BUILD YOUR MACHINE</h3>
+                    <p>Follow our clear instructions with full 3-day technical support to assemble your machine. Anyone can do it with our guidance!</p>
+                    <ul class="step-features">
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Video tutorials
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Live support access
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Troubleshooting assistance
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-arrow">▼</div>
+
+            <div class="step-container">
+                <div class="step-number">3</div>
+                <div class="step-card">
+                    <h3>START CREATING</h3>
+                    <p>Complete your first projects with ongoing community support. Begin using your machine right away!</p>
+                    <ul class="step-features">
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Software setup guidance
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> <a href="https://www.facebook.com/groups/998602455597977" style="text-decoration: none; color: inherit;">Community project sharing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" style="background-color: #f4f4f4; padding: 50px 0;">
+            <div class="cta-box" style="background-color: #ff8c00; background: linear-gradient(135deg, #ff8c00, #e67300); color: white; padding: 60px 40px; border-radius: 12px; max-width: 800px; margin: 0 auto; text-align: center; box-shadow: 0 8px 20px rgba(255, 140, 0, 0.15);">
+                <h2 style="font-size: 36px; margin-bottom: 30px; color: white; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(224, 116, 0, 0.2);">START YOUR SKY FIRE LASER JOURNEY TODAY</h2>
+                <p style="margin-bottom: 40px; font-size: 20px; line-height: 1.6;">Join hundreds who have successfully built their own professional machines</p>
+                <a href="https://www.facebook.com/groups/998602455597977" class="btn-cta" style="background-color: white; color: #ff8c00; font-size: 20px; padding: 15px 50px; font-weight: 700; border-radius: 30px; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(224, 116, 0, 0.2); text-decoration: none; display: inline-block;">GET STARTED NOW</a>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" style="background-color: #fff; padding: 80px 0;">
+            <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 50px; text-align: center;">HEAR FROM OUR SUCCESSFUL BUILDERS</h2>
+            <div class="testimonial-slider" style="max-width: 800px; margin: 0 auto 30px; overflow: hidden;">
+                <div class="testimonial-card" style="display: flex; flex-direction: column; background-color: #f8f8f8; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); opacity: 1; transform: translateY(0); border: 1px solid #eee;">
+                    <div class="star-rating" style="margin-bottom: 15px; color: #ff8c00; font-size: 24px; text-align: center;">
+                        ★★★★★
+                    </div>
+                    <div class="testimonial-content" style="flex-grow: 1;">
+                        <p style="font-style: italic; margin-bottom: 20px; color: #555; line-height: 1.8; font-size: 16px; text-align: center;">"I saved over $5,000 building my own laser cutter with SKY FIRE's guidance. The free installation support was incredibly helpful when I got stuck."</p>
+                        <div class="testimonial-author" style="text-align: center;">
+                            <h4 style="margin-bottom: 5px; color: #ff8c00;">Michael T.</h4>
+                            <p style="margin: 0; font-style: normal; font-size: 14px; color: #777;">Small Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Second testimonial -->
+                <div class="testimonial-card" style="display: none; flex-direction: column; background-color: #f8f8f8; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); opacity: 1; transform: translateY(0); border: 1px solid #eee;">
+                    <div class="star-rating" style="margin-bottom: 15px; color: #ff8c00; font-size: 24px; text-align: center;">
+                        ★★★★★
+                    </div>
+                    <div class="testimonial-content" style="flex-grow: 1;">
+                        <p style="font-style: italic; margin-bottom: 20px; color: #555; line-height: 1.8; font-size: 16px; text-align: center;">"I had zero technical experience but managed to build a fully functioning laser machine in just 2 weeks. The step-by-step documentation from SKY FIRE made it foolproof."</p>
+                        <div class="testimonial-author" style="text-align: center;">
+                            <h4 style="margin-bottom: 5px; color: #ff8c00;">Sarah K.</h4>
+                            <p style="margin: 0; font-style: normal; font-size: 14px; color: #777;">Craft Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Third testimonial -->
+                <div class="testimonial-card" style="display: none; flex-direction: column; background-color: #f8f8f8; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); opacity: 1; transform: translateY(0); border: 1px solid #eee;">
+                    <div class="star-rating" style="margin-bottom: 15px; color: #ff8c00; font-size: 24px; text-align: center;">
+                        ★★★★★
+                    </div>
+                    <div class="testimonial-content" style="flex-grow: 1;">
+                        <p style="font-style: italic; margin-bottom: 20px; color: #555; line-height: 1.8; font-size: 16px; text-align: center;">"The component selection service from SKY FIRE saved me countless hours of research. They recommended parts that fit my budget perfectly and now I have a commercial-grade machine."</p>
+                        <div class="testimonial-author" style="text-align: center;">
+                            <h4 style="margin-bottom: 5px; color: #ff8c00;">David R.</h4>
+                            <p style="margin: 0; font-style: normal; font-size: 14px; color: #777;">Woodworking Professional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots" style="display: flex; justify-content: center; margin-top: 20px;">
+                <span class="dot active" style="width: 12px; height: 12px; background-color: #ff8c00; border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
+                <span class="dot" style="width: 12px; height: 12px; background-color: #ddd; border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
+                <span class="dot" style="width: 12px; height: 12px; background-color: #ddd; border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
+            </div>
+        </section>
+
+        <!-- Value Summary Section -->
+        <section class="value-summary" style="background-color: #fff5e6; padding: 80px 0;">
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <h4 style="color: #ff8c00; font-size: 18px; margin-bottom: 5px; text-transform: uppercase;">SKY FIRE PRESENTS</h4>
+                <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 10px; color: #333;">THE VALUE YOU'RE GETTING</h2>
+                <div style="width: 80px; height: 4px; background-color: #ff8c00; margin: 0 auto;"></div>
+            </div>
+            <div class="value-table" style="max-width: 800px; margin: 0 auto 30px; background-color: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); overflow: hidden; opacity: 1; transform: translateY(0);">
+                <div class="value-table-row header" style="display: flex; background-color: #ff8c00; color: white; font-weight: 700;">
+                    <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">What You Get</div>
+                    <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">Worth</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center;">Your Price</div>
+                </div>
+                <div class="value-table-row" style="display: flex; border-bottom: 1px solid #eee;">
+                    <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">Component Selection Consultation</div>
+                    <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$199</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #e74c3c;">FREE</div>
+                </div>
+                <div class="value-table-row" style="display: flex; border-bottom: 1px solid #eee;">
+                    <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">3-Day Installation Support</div>
+                    <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$299</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #e74c3c;">FREE</div>
+                </div>
+                <div class="value-table-row" style="display: flex; border-bottom: 1px solid #eee;">
+                    <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">Lifetime Forum Access</div>
+                    <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$99/year</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #e74c3c;">FREE</div>
+                </div>
+                <div class="value-table-row" style="display: flex; border-bottom: 1px solid #eee; background-color: #fff9e6;">
+                    <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">
+                        <a href="https://alleriastore.com/pages/diy-fiber-laser-cutting-machine-contest" style="text-decoration: none; color: inherit;">
+                            <strong>Global DIY Competition Entry</strong>
+                        </a>
+                    </div>
+                    <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$1500 Prize</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #e74c3c;">INCLUDED</div>
+                </div>
+                <div class="value-table-row total" style="display: flex; background-color: #f8f8f8; font-weight: 700; font-size: 18px;">
+                    <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">Total Value</div>
+                    <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$598+</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #e74c3c; font-size: 22px;">$0</div>
+                </div>
+            </div>
+            <div class="value-note" style="max-width: 800px; margin: 0 auto; text-align: left; font-size: 14px; color: #666;">
+                <p style="margin-bottom: 15px;"><strong style="color: #ff8c00;">★</strong> You only pay for the components you choose to purchase</p>
+                <p><strong style="color: #ff8c00;">★</strong> 
+                    <a href="https://alleriastore.com/pages/diy-fiber-laser-cutting-machine-contest" style="text-decoration: none; color: inherit;">
+                        Global DIY Competition offers up to <span style="color: #ff8c00; font-weight: 700;">$1500 USD</span> in vouchers as prizes for the best builds!
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta" style="background-color: #fff;">
+            <div class="final-cta-box" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 36px; margin-bottom: 20px; color: #333;">BEGIN YOUR SKY FIRE LASER JOURNEY</h2>
+                <p style="margin-bottom: 30px; font-size: 18px; color: #666;">Join thousands of successful builders who saved money while creating professional-quality machines with SKY FIRE</p>
+                <a href="https://www.facebook.com/groups/998602455597977" class="btn-main" style="background-color: #ff8c00; color: white; font-size: 18px; padding: 15px 40px; font-weight: 700; border-radius: 30px; text-decoration: none; display: inline-block;">START NOW - IT'S FREE!</a>
+            </div>
+        </section>
+
+        <!-- Simple Footer -->
+        <footer class="simple-footer" style="background-color: #1a1a2e; background: linear-gradient(to bottom, #16213e, #1a1a2e); color: white; text-align: center; padding: 30px 0; margin-top: 50px;">
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: #ff8c00; font-size: 24px; margin-bottom: 5px;">SKY FIRE</h3>
+                <p style="color: white; font-size: 16px;">We Have ALL You Need on Fiber Laser</p>
+            </div>
+            <p style="font-size: 14px; color: #e0d6cc;">&copy; 2023 SKY FIRE. All Rights Reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Video placeholder click to simulate playing video
+            const videoPlaceholder = document.querySelector('.video-placeholder');
+            if (videoPlaceholder) {
+                videoPlaceholder.addEventListener('click', function() {
+                    alert('This would play your introduction video in a real implementation!');
+                });
+            }
+
+            // Testimonial slider functionality
+            const dots = document.querySelectorAll('.dot');
+            const testimonials = document.querySelectorAll('.testimonial-card');
+            
+            // Only show first testimonial initially
+            if (testimonials.length > 1) {
+                for (let i = 1; i < testimonials.length; i++) {
+                    testimonials[i].style.display = 'none';
+                }
+            }
+            
+            // Add click event to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    // Hide all testimonials
+                    testimonials.forEach(card => {
+                        card.style.display = 'none';
+                    });
+                    
+                    // Remove active class from all dots
+                    dots.forEach(d => {
+                        d.classList.remove('active');
+                    });
+                    
+                    // Show selected testimonial and activate dot
+                    testimonials[index].style.display = 'flex';
+                    dot.classList.add('active');
+                });
+            });
+
+            // Smooth scrolling for CTA buttons
+            const ctaButtons = document.querySelectorAll('.btn-cta, .btn-main');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // In a real implementation, you'd scroll to a form or redirect to a signup page
+                    alert('In a real implementation, this would take you to a registration form or contact page!');
+                    
+                    // Scroll to the value-summary section as an example
+                    const targetSection = document.querySelector('.value-summary');
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Add animations on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.service-box, .step-container, .testimonial-card, .value-table, .bonus-box');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Highlight free items with pulse effect
+            const freeTags = document.querySelectorAll('.free-tag');
+            freeTags.forEach(tag => {
+                tag.classList.add('pulse');
+            });
+            
+            // Auto-rotate testimonials every 5 seconds
+            let currentTestimonial = 0;
+            
+            function rotateTestimonials() {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                
+                // Hide all testimonials
+                testimonials.forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // Remove active class from all dots
+                dots.forEach(d => {
+                    d.classList.remove('active');
+                });
+                
+                // Show current testimonial and activate dot
+                testimonials[currentTestimonial].style.display = 'flex';
+                dots[currentTestimonial].classList.add('active');
+            }
+            
+            // Start testimonial rotation if there are testimonials
+            if (testimonials.length > 1) {
+                setInterval(rotateTestimonials, 5000);
+            }
+            
+            // Add hover effects to value items
+            const valueItems = document.querySelectorAll('.value-item');
+            valueItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#e1f0fa';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#f8f8f8';
+                });
+            });
+            
+            // Run animation check on page load and scroll
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on page load
+            
+            // Countdown timer to create urgency
+            function startCountdown() {
+                // Create countdown element
+                const countdownDiv = document.createElement('div');
+                countdownDiv.className = 'countdown';
+                countdownDiv.innerHTML = `
+                    <p>Limited Time Offer! Expires in:</p>
+                    <div class="countdown-timer">
+                        <span id="hours">24</span>h
+                        <span id="minutes">00</span>m
+                        <span id="seconds">00</span>s
+                    </div>
+                `;
+                
+                // Add to both CTA sections
+                const ctaBoxes = document.querySelectorAll('.cta-box, .final-cta-box');
+                ctaBoxes.forEach(box => {
+                    const clone = countdownDiv.cloneNode(true);
+                    box.insertBefore(clone, box.querySelector('button'));
+                });
+                
+                // Add countdown functionality
+                let hours = 24;
+                let minutes = 0;
+                let seconds = 0;
+                
+                function updateCountdown() {
+                    if (seconds > 0) {
+                        seconds--;
+                    } else {
+                        if (minutes > 0) {
+                            minutes--;
+                            seconds = 59;
+                        } else {
+                            if (hours > 0) {
+                                hours--;
+                                minutes = 59;
+                                seconds = 59;
+                            }
+                        }
+                    }
+                    
+                    document.querySelectorAll('#hours').forEach(el => el.textContent = hours.toString().padStart(2, '0'));
+                    document.querySelectorAll('#minutes').forEach(el => el.textContent = minutes.toString().padStart(2, '0'));
+                    document.querySelectorAll('#seconds').forEach(el => el.textContent = seconds.toString().padStart(2, '0'));
+                    
+                    if (hours === 0 && minutes === 0 && seconds === 0) {
+                        clearInterval(countdownInterval);
+                    }
+                }
+                
+                const countdownInterval = setInterval(updateCountdown, 1000);
+            }
+            
+            // Uncomment to enable countdown timer
+            // startCountdown();
+
+            // Community Carousel Functionality
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+            const nextButton = document.querySelector('.carousel-btn.next');
+            const prevButton = document.querySelector('.carousel-btn.prev');
+            const dotsContainer = document.querySelector('.carousel-dots');
+
+            if (track && slides.length && nextButton && prevButton && dotsContainer) {
+                let currentIndex = 0;
+                
+                const moveToSlide = (targetIndex) => {
+                    if (targetIndex < 0) targetIndex = slides.length - 1;
+                    if (targetIndex >= slides.length) targetIndex = 0;
+                    
+                    track.style.transform = 'translateX(-' + (targetIndex * 100) + '%)';
+                    
+                    // Update active dot
+                    document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                        if (index === targetIndex) {
+                            dot.classList.add('active');
+                            dot.style.backgroundColor = '#ff8c00';
+                        } else {
+                            dot.classList.remove('active');
+                            dot.style.backgroundColor = '#ddd';
+                        }
+                    });
+                    
+                    currentIndex = targetIndex;
+                };
+                
+                // Create dots
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('carousel-dot');
+                    dot.style.width = '10px';
+                    dot.style.height = '10px';
+                    dot.style.borderRadius = '50%';
+                    dot.style.backgroundColor = index === 0 ? '#ff8c00' : '#ddd';
+                    dot.style.margin = '0 5px';
+                    dot.style.cursor = 'pointer';
+                    dot.style.display = 'inline-block';
+                    dot.style.transition = 'background-color 0.3s ease';
+                    
+                    if (index === 0) dot.classList.add('active');
+                    
+                    dot.addEventListener('click', () => {
+                        moveToSlide(index);
+                    });
+                    
+                    dotsContainer.appendChild(dot);
+                });
+                
+                // Click events for buttons
+                nextButton.addEventListener('click', () => {
+                    moveToSlide(currentIndex + 1);
+                });
+                
+                prevButton.addEventListener('click', () => {
+                    moveToSlide(currentIndex - 1);
+                });
+                
+                // Auto-rotate carousel
+                setInterval(() => {
+                    moveToSlide(currentIndex + 1);
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
