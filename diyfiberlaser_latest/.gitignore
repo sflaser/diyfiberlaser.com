@@ -1,0 +1,19 @@
+# MacOS
+.DS_Store
+
+# Zip files
+*.zip
+
+# Temporary directories
+diyfiberlaser_latest/
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp 
