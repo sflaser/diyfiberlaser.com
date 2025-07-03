@@ -99,4 +99,52 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('sticky');
         }
     });
+});
+
+// 防止PDF文件列表干扰testimonial部分
+document.addEventListener('DOMContentLoaded', function() {
+    // 清理函数，移除可能的PDF列表元素
+    function cleanUpTestimonialSection() {
+        // 获取testimonial部分
+        const testimonialSection = document.querySelector('.testimonials');
+        if (!testimonialSection) return;
+        
+        // 确保testimonial部分有足够高的z-index
+        testimonialSection.style.zIndex = '999';
+        testimonialSection.style.position = 'relative';
+        testimonialSection.style.backgroundColor = '#fff';
+        
+        // 获取testimonial卡片容器
+        const testimonialWrapper = document.querySelector('.testimonial-wrapper');
+        if (testimonialWrapper) {
+            testimonialWrapper.style.zIndex = '1000';
+        }
+        
+        // 移除不应该出现在testimonial部分的元素
+        const unwantedElements = testimonialSection.querySelectorAll('a[href*=".pdf"], a:not([class]), ul:not([class]), ol:not([class]), table:not([class])');
+        unwantedElements.forEach(el => {
+            el.remove();
+        });
+    }
+    
+    // 页面加载时执行清理
+    cleanUpTestimonialSection();
+    
+    // 每秒执行一次清理，持续5秒，确保页面完全加载后也能清理
+    for (let i = 1; i <= 5; i++) {
+        setTimeout(cleanUpTestimonialSection, i * 1000);
+    }
+    
+    // MutationObserver监控DOM变化，自动清理
+    const observer = new MutationObserver(function(mutations) {
+        cleanUpTestimonialSection();
+    });
+    
+    const testimonialSection = document.querySelector('.testimonials');
+    if (testimonialSection) {
+        observer.observe(testimonialSection, { 
+            childList: true, 
+            subtree: true 
+        });
+    }
 }); 

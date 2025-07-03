@@ -1,43 +1,22 @@
-# SKY FIRE - DIY Laser Machine Landing Page
+# DIY Fiber Laser
 
-这是SKY FIRE DIY激光切割机的营销网站源码。该网站提供了有关如何构建自己的专业激光机器的信息和资源。
+[![Netlify Status](https://api.netlify.com/api/v1/badges/99ec59bc-ef8f-474d-9bd3-3127d0067da6/deploy-status)](https://app.netlify.com/sites/diyfiberlaser1/deploys)
 
-## 功能
+## 关于本站
 
-- 响应式设计，适配各种设备
-- 专业的布局和设计
-- 视频嵌入
-- 交互式轮播图展示社区项目
-- 详细的价值主张和特色服务展示
-- 客户评价展示
+DIY Fiber Laser 是一个专注于帮助爱好者DIY光纤激光设备的资源站点。本站点提供详细的指南、教程和配件信息，帮助用户将CO₂激光器转换为光纤激光器，或者从零开始构建自己的激光设备。
 
-## 部署说明
+## 网站特点
 
-### 方法1：通过GitHub Pages部署
+- 详细的DIY激光设备指南
+- 专业技术支持和建议
+- 高质量零部件推荐
+- 用户案例展示
 
-1. 在GitHub上创建一个新的仓库
-2. 将此代码推送到该仓库
-   ```
-   git remote add origin https://github.com/您的用户名/您的仓库名.git
-   git push -u origin main
-   ```
-3. 在GitHub仓库设置中启用GitHub Pages功能，选择main分支作为源
+## 访问网站
 
-### 方法2：通过Cloudflare Pages部署
+[https://diyfiberlaser.com](https://diyfiberlaser.com)
 
-1. 创建Cloudflare账户并登录Cloudflare Dashboard
-2. 进入Pages部分，点击"创建项目"
-3. 连接到您的GitHub仓库
-4. 保持默认设置，点击"保存并部署"
+## 相关资源
 
-## 自定义
-
-您可以修改以下内容来自定义网站：
-
-- `index.html` - 主要HTML内容和样式
-- `image/` - 图片和视频资源
-- `script.js` - JavaScript功能
-
-## 许可证
-
-仅供个人学习和参考，未经授权不得用于商业用途。 
+访问我们的主站 [Alleria Store](https://alleriastore.com) 获取更多激光设备和配件。 

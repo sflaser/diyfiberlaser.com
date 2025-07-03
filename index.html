@@ -7,6 +7,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Ads 追踪代码 -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1125868506"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'AW-1125868506');
+    </script>
+    
     <style>
         /* Global Styles */
         * {
@@ -48,7 +60,7 @@
         }
 
         .highlight {
-            color: #e74c3c;
+            color: #ff8c00;
             font-weight: 700;
         }
 
@@ -71,7 +83,9 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,140,0,0.05) 100%); padding: 80px 0; text-align: center;
+            background-color: #ffffff;
+            padding: 80px 0;
+            text-align: center;
         }
 
         .hero h1 {
@@ -244,7 +258,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: #e74c3c;
+            background-color: #ff8c00;
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
@@ -284,7 +298,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: #e74c3c;
+            background-color: #ff8c00;
             color: white;
             padding: 8px 20px;
             border-radius: 30px;
@@ -384,7 +398,7 @@
 
         /* CTA Section */
         .cta {
-            background-color: #f4f4f4;
+            background-color: #fff5e6;
         }
 
         .cta-box {
@@ -435,20 +449,31 @@
 
         /* Testimonials Section */
         .testimonials {
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 80px 0;
+            position: relative;
+            z-index: 999;
+            overflow: visible;
+            clear: both;
         }
 
-        .testimonials h2 {
-            font-size: 32px;
-            text-transform: uppercase;
-            margin-bottom: 50px;
+        .testimonial-wrapper {
+            position: relative;
+            z-index: 1000;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            padding: 15px;
+            max-width: 850px;
+            margin: 0 auto;
         }
 
         .testimonial-slider {
             max-width: 800px;
             margin: 0 auto 30px;
             overflow: hidden;
+            position: relative;
+            z-index: 1001;
         }
 
         .testimonial-card {
@@ -461,9 +486,8 @@
             opacity: 1;
             transform: translateY(0);
             border: 1px solid #eee;
-            background-image: url('image/testimonial_bg_1.png');
-            background-size: cover;
-            background-position: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .star-rating {
@@ -480,7 +504,7 @@
         .testimonial-content p {
             font-style: italic;
             margin-bottom: 20px;
-            color: #555;
+            color: #333;
             line-height: 1.8;
             font-size: 16px;
         }
@@ -494,13 +518,15 @@
             margin: 0;
             font-style: normal;
             font-size: 14px;
-            color: #777;
+            color: #555;
         }
 
         .testimonial-dots {
             display: flex;
             justify-content: center;
             margin-top: 20px;
+            position: relative;
+            z-index: 1001;
         }
 
         .dot {
@@ -589,7 +615,7 @@
         }
 
         .value-price {
-            color: #e74c3c;
+            color: #ff8c00;
         }
 
         .value-table-row.total .value-price {
@@ -606,7 +632,7 @@
 
         /* Final CTA Section */
         .final-cta {
-            background-color: #fff;
+            background-color: #ffffff;
         }
 
         .final-cta-box {
@@ -644,8 +670,7 @@
 
         /* Simple Footer */
         .simple-footer {
-            background-color: #1a1a2e;
-            background: linear-gradient(to bottom, #16213e, #1a1a2e);
+            background-color: #ff8c00;
             color: white;
             text-align: center;
             padding: 30px 0;
@@ -657,7 +682,7 @@
         }
 
         .simple-footer h3 {
-            color: #ff8c00;
+            color: white;
             font-size: 24px;
             margin-bottom: 5px;
         }
@@ -665,6 +690,11 @@
         .simple-footer p {
             color: white;
             font-size: 16px;
+        }
+
+        .simple-footer a:hover {
+            opacity: 1 !important;
+            text-decoration: underline !important;
         }
 
         /* Animation */
@@ -676,6 +706,12 @@
         
         .pulse {
             animation: pulse 2s infinite;
+        }
+
+        /* Prize card hover effects */
+        .diy-competition .prize-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(255, 140, 0, 0.15);
         }
 
         /* Countdown Styles */
@@ -703,6 +739,37 @@
 
         /* Responsive Styles */
         @media (max-width: 768px) {
+            .simple-header div {
+                flex-direction: column !important;
+                gap: 20px;
+            }
+            
+            .simple-header .logo {
+                text-align: center !important;
+            }
+            
+            .simple-header .logo h1 {
+                font-size: 32px !important;
+            }
+            
+            .components-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .diy-competition div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .diy-competition div[style*="flex"] {
+                flex-direction: column !important;
+                gap: 15px !important;
+            }
+            
+            .simple-footer div[style*="flex"] {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            
             .hero h1 {
                 font-size: 32px;
             }
@@ -794,14 +861,19 @@
     <div class="container">
         <!-- Simple Header -->
         <header class="simple-header" style="padding: 20px 0; background-color: transparent; border-bottom: 1px solid rgba(0,0,0,0.06);">
-            <div class="logo" style="text-align: center;">
-                <h1 style="margin: 0; color: #ff8c00; font-size: 42px; font-weight: 800; font-family: 'Impact', 'Arial Black', sans-serif; letter-spacing: 2px;">SKY FIRE</h1>
-                <p style="margin: 10px 0 0; color: #333333; font-size: 18px; font-family: 'Montserrat', sans-serif; font-weight: 500;">Build Your Own Professional Laser Machine</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <div class="logo" style="text-align: center;">
+                    <h1 style="margin: 0; color: #ff8c00; font-size: 42px; font-weight: 800; font-family: 'Impact', 'Arial Black', sans-serif; letter-spacing: 2px;">SKY FIRE</h1>
+                    <p style="margin: 10px 0 0; color: #333333; font-size: 18px; font-family: 'Montserrat', sans-serif; font-weight: 500;">Build Your Own Professional Laser Machine</p>
+                </div>
+                <div style="text-align: right;">
+                    <a href="https://alleriastore.com/" style="background-color: #ff8c00; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 3px 8px rgba(255, 140, 0, 0.2);">🛒 SHOP COMPONENTS</a>
+                </div>
             </div>
         </header>
 
         <!-- Hero Section -->
-        <section class="hero" style="background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,140,0,0.05) 100%); padding: 80px 0; text-align: center;">
+        <section class="hero" style="background-color: #ffffff; padding: 80px 0; text-align: center;">
             <h1 style="font-size: 48px; font-weight: 800; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; color: #ff8c00;">BUILD YOUR OWN PROFESSIONAL LASER MACHINE</h1>
             <p style="font-size: 24px; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; color: #333333;">Expert Guidance from SKY FIRE Without The High Costs</p>
             <div class="video-container" style="max-width: 800px; margin: 0 auto 40px; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); position: relative;">
@@ -820,7 +892,7 @@
         </section>
 
         <!-- Community Showcase Section -->
-        <section class="community-showcase" style="background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,140,0,0.03) 50%, rgba(255,255,255,1) 100%); padding: 80px 0;">
+        <section class="community-showcase" style="background-color: #fff5e6; padding: 80px 0;">
             <div class="section-header" style="text-align: center; margin-bottom: 50px;">
                 <h4 style="color: #ff8c00; font-size: 24px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;">OUR VIBRANT COMMUNITY</h4>
                 <h2 style="font-size: 42px; text-transform: uppercase; margin-bottom: 20px; color: #333333; font-weight: 800; letter-spacing: 1px;">AMAZING PROJECTS FROM BUILDERS LIKE YOU</h2>
@@ -884,7 +956,7 @@
         </section>
 
         <!-- Value Proposition Section -->
-        <section class="value-prop" style="background-color: #f8f8f8; padding: 80px 0;">
+        <section class="value-prop" style="background-color: #ffffff; padding: 80px 0;">
             <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 40px; color: #333; text-align: center;">WHY BUILD YOUR OWN LASER MACHINE?</h2>
             <div class="value-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
                 <div class="value-item" style="padding: 30px; background-color: white; border-radius: 8px; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00;">
@@ -905,6 +977,40 @@
             </div>
         </section>
 
+        <!-- Recommended Components Section -->
+        <section class="recommended-components" style="background-color: #fff5e6; padding: 80px 0;">
+            <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 50px; color: #333; text-align: center;">GET YOUR COMPONENTS FROM OUR OFFICIAL STORE</h2>
+            <div class="components-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto 40px;">
+                <div class="component-item" style="background-color: white; padding: 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00; transition: transform 0.3s ease;">
+                    <div style="font-size: 36px; margin-bottom: 15px;">⚡</div>
+                    <h3 style="color: #ff8c00; margin-bottom: 10px;">Laser Sources</h3>
+                    <p style="color: #666; margin-bottom: 15px;">JPT & Raycus fiber lasers 20W-12000W</p>
+                    <a href="https://alleriastore.com/collections/laser-source" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Shop Laser Sources →</a>
+                </div>
+                <div class="component-item" style="background-color: white; padding: 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00; transition: transform 0.3s ease;">
+                    <div style="font-size: 36px; margin-bottom: 15px;">🔧</div>
+                    <h3 style="color: #ff8c00; margin-bottom: 10px;">Cutting Heads</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Raytools & Precitec cutting heads</p>
+                    <a href="https://alleriastore.com/collections/laser-cutting-head" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Shop Cutting Heads →</a>
+                </div>
+                <div class="component-item" style="background-color: white; padding: 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00; transition: transform 0.3s ease;">
+                    <div style="font-size: 36px; margin-bottom: 15px;">🎛️</div>
+                    <h3 style="color: #ff8c00; margin-bottom: 10px;">Control Systems</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Raytools control systems & software</p>
+                    <a href="https://alleriastore.com/collections/laser-cutting-software" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Shop Controllers →</a>
+                </div>
+                <div class="component-item" style="background-color: white; padding: 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00; transition: transform 0.3s ease;">
+                    <div style="font-size: 36px; margin-bottom: 15px;">❄️</div>
+                    <h3 style="color: #ff8c00; margin-bottom: 10px;">Cooling Systems</h3>
+                    <p style="color: #666; margin-bottom: 15px;">S&A chillers & cooling solutions</p>
+                    <a href="https://alleriastore.com/collections/laser-chiller" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Shop Chillers →</a>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://alleriastore.com/" style="background-color: #ff8c00; color: white; font-size: 18px; padding: 15px 40px; font-weight: 700; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(255, 140, 0, 0.2);">BROWSE ALL COMPONENTS</a>
+            </div>
+        </section>
+
         <!-- Free Services Section -->
         <section class="free-services" style="background-color: #fff5e6; padding: 80px 0;">
             <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 50px; text-align: center;">EVERYTHING YOU GET <span style="color: #ff8c00; font-weight: 700;">100% FREE</span></h2>
@@ -912,32 +1018,32 @@
                 <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
                     <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">🔍</div>
                     <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free Component Selection Service</h3>
-                    <p style="color: #666;">Expert advice on choosing the right parts based on your budget and needs</p>
-                    <a href="https://alleriastore.com/pages/contact" style="position: absolute; top: 20px; right: 20px; background-color: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
+                    <p style="color: #666;">Expert advice on choosing the right parts based on your budget and needs. <a href="https://alleriastore.com/" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Browse our complete component catalog →</a></p>
+                    <a href="https://alleriastore.com/pages/contact" style="position: absolute; top: 20px; right: 20px; background-color: #ff8c00; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
                 </div>
                 <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
                     <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">🛠️</div>
                     <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free 3-Day Installation Support</h3>
                     <p style="color: #666;">Live technical assistance throughout your building process</p>
-                    <a href="https://alleriastore.com/pages/sky-fire-support-packages-for-diy-fiber-laser-machines" style="position: absolute; top: 20px; right: 20px; background-color: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
+                    <a href="https://alleriastore.com/pages/sky-fire-support-packages-for-diy-fiber-laser-machines" style="position: absolute; top: 20px; right: 20px; background-color: #ff8c00; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
                 </div>
                 <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
                     <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">📝</div>
                     <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free DIY Documentation</h3>
                     <p style="color: #666;">Complete step-by-step guides, diagrams, and video tutorials</p>
-                    <a href="https://www.youtube.com/@Skyfirelaser" style="position: absolute; top: 20px; right: 20px; background-color: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
+                    <a href="https://www.youtube.com/@Skyfirelaser" style="position: absolute; top: 20px; right: 20px; background-color: #ff8c00; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
                 </div>
                 <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
                     <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">👥</div>
                     <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free Community Forum Access</h3>
                     <p style="color: #666;">Join our community of DIY laser enthusiasts for ongoing support</p>
-                    <a href="https://www.facebook.com/groups/998602455597977" style="position: absolute; top: 20px; right: 20px; background-color: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
+                    <a href="https://www.facebook.com/groups/998602455597977" style="position: absolute; top: 20px; right: 20px; background-color: #ff8c00; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
                 </div>
             </div>
             <div class="bonus-box" style="background-color: #fff9e6; border-left: 5px solid #e67e22; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; max-width: 1000px; margin: 40px auto 0;">
                 <h3 style="font-size: 28px; margin-bottom: 15px; color: #e67e22; font-weight: 700;">BONUS: DIY Laser Cutting Machine Kits Checklist</h3>
                 <p style="color: #666; font-size: 18px; line-height: 1.6;">Get our comprehensive component checklist to ensure you have everything needed for your build</p>
-                <a href="https://cdn.shopify.com/s/files/1/0651/8158/1563/files/Checklist_for_a_whole_laser_cutting_machine.pdf?v=1715934590" style="position: absolute; top: 20px; right: 20px; background-color: #e74c3c; color: white; padding: 8px 20px; border-radius: 30px; font-weight: 700; font-size: 16px; text-decoration: none; display: inline-block; animation: pulse 2s infinite;">FREE</a>
+                <a href="https://cdn.shopify.com/s/files/1/0651/8158/1563/files/Checklist_for_a_whole_laser_cutting_machine.pdf?v=1715934590" style="position: absolute; top: 20px; right: 20px; background-color: #ff8c00; color: white; padding: 8px 20px; border-radius: 30px; font-weight: 700; font-size: 16px; text-decoration: none; display: inline-block; animation: pulse 2s infinite;">FREE</a>
             </div>
         </section>
 
@@ -959,6 +1065,9 @@
                         </li>
                         <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
                             <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Sourcing assistance
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> <a href="https://alleriastore.com/" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Shop premium components</a>
                         </li>
                         <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
                             <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Contact us: <a href="mailto:info@sflaser.net" style="color: #ff8c00; text-decoration: none;">info@sflaser.net</a>
@@ -984,6 +1093,9 @@
                         <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
                             <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> Troubleshooting assistance
                         </li>
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> <a href="https://alleriastore.com/collections/laser-cutting-machine" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Quality components available</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -1002,13 +1114,16 @@
                         <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
                             <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> <a href="https://www.facebook.com/groups/998602455597977" style="text-decoration: none; color: inherit;">Community project sharing</a>
                         </li>
+                        <li style="margin-bottom: 10px; padding-left: 25px; position: relative; color: #555;">
+                            <span style="color: #ff8c00; position: absolute; left: 0; font-weight: 700;">✓</span> <a href="https://www.diyfiberlasercontest.com/" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Enter global competition</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta" style="background-color: #f4f4f4; padding: 50px 0;">
+        <section class="cta" style="background-color: #fff5e6; padding: 50px 0;">
             <div class="cta-box" style="background-color: #ff8c00; background: linear-gradient(135deg, #ff8c00, #e67300); color: white; padding: 60px 40px; border-radius: 12px; max-width: 800px; margin: 0 auto; text-align: center; box-shadow: 0 8px 20px rgba(255, 140, 0, 0.15);">
                 <h2 style="font-size: 36px; margin-bottom: 30px; color: white; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(224, 116, 0, 0.2);">START YOUR SKY FIRE LASER JOURNEY TODAY</h2>
                 <p style="margin-bottom: 40px; font-size: 20px; line-height: 1.6;">Join hundreds who have successfully built their own professional machines</p>
@@ -1016,55 +1131,111 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section class="testimonials" style="background-color: #fff; padding: 80px 0;">
-            <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 50px; text-align: center;">HEAR FROM OUR SUCCESSFUL BUILDERS</h2>
-            <div class="testimonial-slider" style="max-width: 800px; margin: 0 auto 30px; overflow: hidden;">
-                <div class="testimonial-card" style="display: flex; flex-direction: column; background-color: #f8f8f8; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); opacity: 1; transform: translateY(0); border: 1px solid #eee; background-image: url('image/testimonial_bg_1.png'); background-size: cover; background-position: center;">
-                    <div class="star-rating" style="margin-bottom: 15px; color: #ff8c00; font-size: 24px; text-align: center;">
-                        ★★★★★
+        <!-- DIY Competition Section -->
+        <section class="diy-competition" style="background-color: #ffffff; padding: 80px 0; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(255, 140, 0, 0.05) 0%, rgba(255, 140, 0, 0.02) 100%);"></div>
+            <div style="position: relative; z-index: 2;">
+                <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                    <h4 style="color: #ff8c00; font-size: 24px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;">🏆 GLOBAL COMPETITION</h4>
+                    <h2 style="font-size: 42px; text-transform: uppercase; margin-bottom: 20px; color: #333333; font-weight: 800; letter-spacing: 1px;">SKYFIRE DIY FIBER LASER CUTTER COMPETITION 2024-2025</h2>
+                    <div style="width: 120px; height: 3px; background-color: #ff8c00; margin: 0 auto;"></div>
+                </div>
+                
+                <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                    <div class="prize-card" style="background-color: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); border-top: 4px solid #ff8c00; transition: all 0.3s ease;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🥇</div>
+                        <h3 style="color: #ff8c00; margin-bottom: 10px; font-size: 24px;">1st Place</h3>
+                        <p style="font-size: 28px; font-weight: 700; color: #333; margin-bottom: 10px;">$3,000</p>
+                        <p style="color: #666;">Gift Voucher</p>
                     </div>
-                    <div class="testimonial-content" style="flex-grow: 1;">
-                        <p style="font-style: italic; margin-bottom: 20px; color: #555; line-height: 1.8; font-size: 16px; text-align: center;">"I saved over $5,000 building my own laser cutter with SKY FIRE's guidance. The free installation support was incredibly helpful when I got stuck."</p>
-                        <div class="testimonial-author" style="text-align: center;">
-                            <h4 style="margin-bottom: 5px; color: #ff8c00;">Michael T.</h4>
-                            <p style="margin: 0; font-style: normal; font-size: 14px; color: #777;">Small Business Owner</p>
-                        </div>
+                    <div class="prize-card" style="background-color: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); border-top: 4px solid #ff8c00; transition: all 0.3s ease;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🥈</div>
+                        <h3 style="color: #ff8c00; margin-bottom: 10px; font-size: 24px;">2nd Place</h3>
+                        <p style="font-size: 28px; font-weight: 700; color: #333; margin-bottom: 10px;">$1,800</p>
+                        <p style="color: #666;">Gift Voucher</p>
+                    </div>
+                    <div class="prize-card" style="background-color: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); border-top: 4px solid #ff8c00; transition: all 0.3s ease;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🥉</div>
+                        <h3 style="color: #ff8c00; margin-bottom: 10px; font-size: 24px;">3rd Place</h3>
+                        <p style="font-size: 28px; font-weight: 700; color: #333; margin-bottom: 10px;">$1,000</p>
+                        <p style="color: #666;">Gift Voucher</p>
                     </div>
                 </div>
                 
-                <!-- Second testimonial -->
-                <div class="testimonial-card" style="display: none; flex-direction: column; background-color: #f8f8f8; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); opacity: 1; transform: translateY(0); border: 1px solid #eee; background-image: url('image/testimonial_bg_2.png'); background-size: cover; background-position: center;">
-                    <div class="star-rating" style="margin-bottom: 15px; color: #ff8c00; font-size: 24px; text-align: center;">
-                        ★★★★★
-                    </div>
-                    <div class="testimonial-content" style="flex-grow: 1;">
-                        <p style="font-style: italic; margin-bottom: 20px; color: #555; line-height: 1.8; font-size: 16px; text-align: center;">"I had zero technical experience but managed to build a fully functioning laser machine in just 2 weeks. The step-by-step documentation from SKY FIRE made it foolproof."</p>
-                        <div class="testimonial-author" style="text-align: center;">
-                            <h4 style="margin-bottom: 5px; color: #ff8c00;">Sarah K.</h4>
-                            <p style="margin: 0; font-style: normal; font-size: 14px; color: #777;">Craft Enthusiast</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Third testimonial -->
-                <div class="testimonial-card" style="display: none; flex-direction: column; background-color: #f8f8f8; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); opacity: 1; transform: translateY(0); border: 1px solid #eee; background-image: url('image/testimonial_bg_2.png'); background-size: cover; background-position: center;">
-                    <div class="star-rating" style="margin-bottom: 15px; color: #ff8c00; font-size: 24px; text-align: center;">
-                        ★★★★★
-                    </div>
-                    <div class="testimonial-content" style="flex-grow: 1;">
-                        <p style="font-style: italic; margin-bottom: 20px; color: #555; line-height: 1.8; font-size: 16px; text-align: center;">"The component selection service from SKY FIRE saved me countless hours of research. They recommended parts that fit my budget perfectly and now I have a commercial-grade machine."</p>
-                        <div class="testimonial-author" style="text-align: center;">
-                            <h4 style="margin-bottom: 5px; color: #ff8c00;">David R.</h4>
-                            <p style="margin: 0; font-style: normal; font-size: 14px; color: #777;">Woodworking Professional</p>
-                        </div>
+                <div style="text-align: center; background-color: white; padding: 40px; border-radius: 12px; max-width: 800px; margin: 0 auto; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);">
+                    <h3 style="color: #333; margin-bottom: 20px; font-size: 24px;">🔥 2nd Edition Registration Now Open!</h3>
+                    <p style="color: #666; margin-bottom: 30px; font-size: 18px; line-height: 1.6;">Join the global maker community and showcase your DIY fiber laser cutting skills. Registration open until September 30, 2025.</p>
+                    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://www.diyfiberlasercontest.com/" style="background-color: #ff8c00; color: white; font-size: 18px; padding: 15px 35px; font-weight: 700; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(255, 140, 0, 0.2);">🏆 REGISTER FOR COMPETITION</a>
+                        <a href="https://www.diyfiberlasercontest.com/" style="background-color: transparent; color: #ff8c00; font-size: 18px; padding: 15px 35px; font-weight: 700; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; border: 2px solid #ff8c00;">📋 VIEW COMPETITION DETAILS</a>
                     </div>
                 </div>
             </div>
-            <div class="testimonial-dots" style="display: flex; justify-content: center; margin-top: 20px;">
-                <span class="dot active" style="width: 12px; height: 12px; background-color: #ff8c00; border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
-                <span class="dot" style="width: 12px; height: 12px; background-color: #ddd; border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
-                <span class="dot" style="width: 12px; height: 12px; background-color: #ddd; border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" style="background-color: #fff; padding: 80px 0; position: relative; z-index: 999; overflow: visible; clear: both;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative;">
+                <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 50px; text-align: center; color: #333;">HEAR FROM OUR SUCCESSFUL BUILDERS</h2>
+                <div class="testimonial-wrapper" style="position: relative; z-index: 1000; background-color: #fff; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); padding: 15px; max-width: 850px; margin: 0 auto;">
+                    <div class="testimonial-slider" style="max-width: 800px; margin: 0 auto 30px; overflow: hidden; position: relative; z-index: 1001;">
+                        <div class="testimonial-card" style="display: flex; flex-direction: column; background-color: #f8f8f8; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); opacity: 1; transform: translateY(0); border: 1px solid #eee; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background-image: url('image/testimonial_bg_1.png'); background-size: cover; background-position: center; opacity: 0.15;"></div>
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 2;"></div>
+                            <div style="position: relative; z-index: 3;">
+                                <div class="star-rating" style="margin-bottom: 15px; color: #ff8c00; font-size: 24px; text-align: center;">
+                                    ★★★★★
+                                </div>
+                                <div class="testimonial-content" style="flex-grow: 1;">
+                                    <p style="font-style: italic; margin-bottom: 20px; color: #333; line-height: 1.8; font-size: 16px; text-align: center;">"I saved over $5,000 building my own laser cutter with SKY FIRE's guidance. The free installation support was incredibly helpful when I got stuck."</p>
+                                    <div class="testimonial-author" style="text-align: center;">
+                                        <h4 style="margin-bottom: 5px; color: #ff8c00;">Michael T.</h4>
+                                        <p style="margin: 0; font-style: normal; font-size: 14px; color: #555;">Small Business Owner</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card" style="display: none; flex-direction: column; background-color: #f8f8f8; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); opacity: 1; transform: translateY(0); border: 1px solid #eee; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background-image: url('image/testimonial_bg_2.png'); background-size: cover; background-position: center; opacity: 0.15;"></div>
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 2;"></div>
+                            <div style="position: relative; z-index: 3;">
+                                <div class="star-rating" style="margin-bottom: 15px; color: #ff8c00; font-size: 24px; text-align: center;">
+                                    ★★★★★
+                                </div>
+                                <div class="testimonial-content" style="flex-grow: 1;">
+                                    <p style="font-style: italic; margin-bottom: 20px; color: #333; line-height: 1.8; font-size: 16px; text-align: center;">"I had zero technical experience but managed to build a fully functioning laser machine in just 2 weeks. The step-by-step documentation from SKY FIRE made it foolproof."</p>
+                                    <div class="testimonial-author" style="text-align: center;">
+                                        <h4 style="margin-bottom: 5px; color: #ff8c00;">Sarah K.</h4>
+                                        <p style="margin: 0; font-style: normal; font-size: 14px; color: #555;">Craft Enthusiast</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card" style="display: none; flex-direction: column; background-color: #f8f8f8; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); opacity: 1; transform: translateY(0); border: 1px solid #eee; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background-image: url('image/testimonial_bg_2.png'); background-size: cover; background-position: center; opacity: 0.15;"></div>
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 2;"></div>
+                            <div style="position: relative; z-index: 3;">
+                                <div class="star-rating" style="margin-bottom: 15px; color: #ff8c00; font-size: 24px; text-align: center;">
+                                    ★★★★★
+                                </div>
+                                <div class="testimonial-content" style="flex-grow: 1;">
+                                    <p style="font-style: italic; margin-bottom: 20px; color: #333; line-height: 1.8; font-size: 16px; text-align: center;">"The component selection service from SKY FIRE saved me countless hours of research. They recommended parts that fit my budget perfectly and now I have a commercial-grade machine."</p>
+                                    <div class="testimonial-author" style="text-align: center;">
+                                        <h4 style="margin-bottom: 5px; color: #ff8c00;">David R.</h4>
+                                        <p style="margin: 0; font-style: normal; font-size: 14px; color: #555;">Woodworking Professional</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-dots" style="display: flex; justify-content: center; margin-top: 20px; position: relative; z-index: 1001;">
+                        <span class="dot active" style="width: 12px; height: 12px; background-color: #ff8c00; border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
+                        <span class="dot" style="width: 12px; height: 12px; background-color: #ddd; border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
+                        <span class="dot" style="width: 12px; height: 12px; background-color: #ddd; border-radius: 50%; margin: 0 5px; cursor: pointer;"></span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1084,45 +1255,47 @@
                 <div class="value-table-row" style="display: flex; border-bottom: 1px solid #eee;">
                     <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">Component Selection Consultation</div>
                     <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$199</div>
-                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #e74c3c;">FREE</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #ff8c00;">FREE</div>
                 </div>
                 <div class="value-table-row" style="display: flex; border-bottom: 1px solid #eee;">
                     <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">3-Day Installation Support</div>
                     <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$299</div>
-                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #e74c3c;">FREE</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #ff8c00;">FREE</div>
                 </div>
                 <div class="value-table-row" style="display: flex; border-bottom: 1px solid #eee;">
                     <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">Lifetime Forum Access</div>
                     <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$99/year</div>
-                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #e74c3c;">FREE</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #ff8c00;">FREE</div>
                 </div>
                 <div class="value-table-row" style="display: flex; border-bottom: 1px solid #eee; background-color: #fff9e6;">
                     <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">
-                        <a href="https://alleriastore.com/pages/diy-fiber-laser-cutting-machine-contest" style="text-decoration: none; color: inherit;">
+                        <a href="https://www.diyfiberlasercontest.com/" style="text-decoration: none; color: inherit;">
                             <strong>Global DIY Competition Entry</strong>
                         </a>
+                        <br><small style="color: #666;">2024-2025 SKYFIRE Competition with $5,800 prize pool</small>
                     </div>
-                    <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$1500 Prize</div>
-                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #e74c3c;">INCLUDED</div>
+                    <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$5,800 Prize Pool</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #ff8c00;">INCLUDED</div>
                 </div>
                 <div class="value-table-row total" style="display: flex; background-color: #f8f8f8; font-weight: 700; font-size: 18px;">
                     <div class="value-service" style="flex: 2; padding: 15px; text-align: left;">Total Value</div>
                     <div class="value-worth" style="flex: 1; padding: 15px; text-align: center;">$598+</div>
-                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #e74c3c; font-size: 22px;">$0</div>
+                    <div class="value-price" style="flex: 1; padding: 15px; text-align: center; color: #ff8c00; font-size: 22px;">$0</div>
                 </div>
             </div>
             <div class="value-note" style="max-width: 800px; margin: 0 auto; text-align: left; font-size: 14px; color: #666;">
-                <p style="margin-bottom: 15px;"><strong style="color: #ff8c00;">★</strong> You only pay for the components you choose to purchase</p>
+                <p style="margin-bottom: 15px;"><strong style="color: #ff8c00;">★</strong> You only pay for the components you choose to purchase - <a href="https://alleriastore.com/" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Shop our complete inventory</a></p>
+                <p style="margin-bottom: 15px;"><strong style="color: #ff8c00;">★</strong> Professional-grade components from trusted brands like <a href="https://alleriastore.com/collections/raytools" style="color: #ff8c00; text-decoration: none;">Raytools</a>, <a href="https://alleriastore.com/collections/jpt" style="color: #ff8c00; text-decoration: none;">JPT</a>, and <a href="https://alleriastore.com/collections/precitec" style="color: #ff8c00; text-decoration: none;">Precitec</a></p>
                 <p><strong style="color: #ff8c00;">★</strong> 
-                    <a href="https://alleriastore.com/pages/diy-fiber-laser-cutting-machine-contest" style="text-decoration: none; color: inherit;">
-                        Global DIY Competition offers up to <span style="color: #ff8c00; font-weight: 700;">$1500 USD</span> in vouchers as prizes for the best builds!
+                    <a href="https://www.diyfiberlasercontest.com/" style="text-decoration: none; color: inherit;">
+                        Global DIY Competition 2024-2025 offers up to <span style="color: #ff8c00; font-weight: 700;">$5,800 USD</span> in vouchers as prizes for the best builds!
                     </a>
                 </p>
             </div>
         </section>
 
         <!-- Final CTA Section -->
-        <section class="final-cta" style="background-color: #fff;">
+        <section class="final-cta" style="background-color: #ffffff;">
             <div class="final-cta-box" style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <h2 style="font-size: 36px; margin-bottom: 20px; color: #333;">BEGIN YOUR SKY FIRE LASER JOURNEY</h2>
                 <p style="margin-bottom: 30px; font-size: 18px; color: #666;">Join thousands of successful builders who saved money while creating professional-quality machines with SKY FIRE</p>
@@ -1131,10 +1304,15 @@
         </section>
 
         <!-- Simple Footer -->
-        <footer class="simple-footer" style="background-color: #1a1a2e; background: linear-gradient(to bottom, #16213e, #1a1a2e); color: white; text-align: center; padding: 30px 0; margin-top: 50px;">
+        <footer class="simple-footer" style="background-color: #ff8c00; color: white; text-align: center; padding: 30px 0; margin-top: 50px;">
             <div style="margin-bottom: 20px;">
-                <h3 style="color: #ff8c00; font-size: 24px; margin-bottom: 5px;">SKY FIRE</h3>
+                <h3 style="color: white; font-size: 24px; margin-bottom: 5px;">SKY FIRE</h3>
                 <p style="color: white; font-size: 16px;">We Have ALL You Need on Fiber Laser</p>
+                <div style="margin-top: 15px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://alleriastore.com/" style="color: white; text-decoration: none; font-size: 14px; opacity: 0.9; transition: opacity 0.3s ease;">🛒 Component Store</a>
+                    <a href="https://www.diyfiberlasercontest.com/" style="color: white; text-decoration: none; font-size: 14px; opacity: 0.9; transition: opacity 0.3s ease;">🏆 Global Competition</a>
+                    <a href="https://www.facebook.com/groups/998602455597977" style="color: white; text-decoration: none; font-size: 14px; opacity: 0.9; transition: opacity 0.3s ease;">👥 Community</a>
+                </div>
             </div>
             <p style="font-size: 14px; color: #e0d6cc;">&copy; 2023 SKY FIRE. All Rights Reserved.</p>
         </footer>
@@ -1198,7 +1376,7 @@
 
             // Add animations on scroll
             const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.service-box, .step-container, .testimonial-card, .value-table, .bonus-box');
+                const elements = document.querySelectorAll('.service-box, .step-container, .testimonial-card, .value-table, .bonus-box, .diy-competition');
                 
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
@@ -1252,6 +1430,20 @@
                 
                 item.addEventListener('mouseleave', function() {
                     this.style.backgroundColor = '#f8f8f8';
+                });
+            });
+
+            // Add hover effects to component items
+            const componentItems = document.querySelectorAll('.component-item');
+            componentItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 8px 25px rgba(255, 140, 0, 0.15)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
                 });
             });
             
