@@ -214,6 +214,7 @@
             transform: translateY(-15px);
             border-color: #ff8c00;
             box-shadow: 0 15px 35px rgba(255, 140, 0, 0.15);
+            background-color: #fff5e6;
         }
 
         .value-icon {
@@ -1640,11 +1641,11 @@
             const valueItems = document.querySelectorAll('.value-item');
             valueItems.forEach(item => {
                 item.addEventListener('mouseenter', function() {
-                    this.style.backgroundColor = '#e1f0fa';
+                    this.style.backgroundColor = '#fff5e6';
                 });
                 
                 item.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = '#f8f8f8';
+                    this.style.backgroundColor = '#ffffff';
                 });
             });
 
