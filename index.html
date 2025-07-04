@@ -150,7 +150,7 @@
             color: #333333;
         }
 
-        /* Value Proposition Section */
+        /* Value Proposition Section - 数字标签式设计 */
         .value-prop {
             background-color: #ffffff;
             padding: 80px 0;
@@ -159,152 +159,202 @@
         .value-prop h2 {
             font-size: 32px;
             text-transform: uppercase;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             color: #333333;
             text-align: center;
         }
 
         .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
             margin: 0 auto;
+            flex-wrap: wrap;
         }
 
         .value-item {
-            padding: 30px;
+            position: relative;
+            padding: 40px 30px;
             background-color: #ffffff;
-            border-radius: 8px;
+            border-radius: 0;
             text-align: center;
             transition: transform 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
-            border-left: 3px solid #ff8c00;
-            border-top: 1px solid #f0f0f0;
-            border-right: 1px solid #f0f0f0;
-            border-bottom: 1px solid #f0f0f0;
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            border: 2px solid #f0f0f0;
+        }
+
+        .value-item::before {
+            content: counter(value-counter);
+            counter-increment: value-counter;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff8c00;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+        }
+
+        .value-grid {
+            counter-reset: value-counter;
         }
 
         .value-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            border-color: #ff8c00;
+            box-shadow: 0 15px 35px rgba(255, 140, 0, 0.15);
+            background-color: #fff5e6;
         }
 
         .value-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 56px;
+            margin: 30px 0 20px;
+            display: block;
         }
 
         .value-item h3 {
-            font-size: 22px;
+            font-size: 24px;
             margin-bottom: 15px;
             color: #ff8c00;
+            font-weight: 700;
         }
 
         .value-item p {
-            color: #333333;
-        }
-
-        /* Free Services Section */
-        .free-services {
-            background-color: #fff5e6;
-            padding: 80px 0;
-        }
-
-        .free-services h2 {
-            font-size: 32px;
-            text-transform: uppercase;
-            margin-bottom: 50px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto 40px;
-        }
-
-        .service-box {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: left;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-            border-left: 5px solid #ff8c00;
-            opacity: 1;
-            transform: translateY(0);
-            border-top: 5px solid #fff5e6;
-            border-right: 5px solid #fff5e6;
-            border-bottom: 5px solid #fff5e6;
-        }
-
-        .service-icon {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .service-box h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            padding-right: 70px;
-        }
-
-        .service-box p {
-            color: #333333;
-        }
-
-        .free-tag {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #ff8c00;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .bonus-box {
-            background-color: #fff9e6;
-            border-left: 5px solid #e67e22;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: left;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-            max-width: 1000px;
-            margin: 40px auto 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .bonus-box h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #e67e22;
-            font-weight: 700;
-        }
-
-        .bonus-box p {
-            color: #333333;
-            font-size: 18px;
+            color: #666;
             line-height: 1.6;
-        }
-
-        .bonus-box .free-tag {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #ff8c00;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 700;
             font-size: 16px;
         }
+
+        /* Recommended Components Section - 紧凑产品目录风格 */
+        .recommended-components {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffeee0 100%);
+            padding: 50px 0;
+            position: relative;
+        }
+
+        .recommended-components::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 140, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 140, 0, 0.05) 0%, transparent 50%);
+        }
+
+        .recommended-components h2 {
+            position: relative;
+            z-index: 2;
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .recommended-components::after {
+            content: '🛒 SHOP NOW';
+            position: relative;
+            z-index: 2;
+            display: block;
+            text-align: center;
+            color: #ff8c00;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .components-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            padding: 0 20px;
+        }
+
+        .component-item {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 20px 15px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 140, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .component-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff8c00, #e67300);
+        }
+
+        .component-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.15);
+            border-color: #ff8c00;
+        }
+
+        .component-item > div:first-child {
+            font-size: 36px;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 2px 4px rgba(255, 140, 0, 0.3));
+        }
+
+        .component-item h3 {
+            color: #ff8c00;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .component-item p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .component-item a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+            padding: 6px 12px;
+            border: 2px solid #ff8c00;
+            border-radius: 15px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .component-item a:hover {
+            background-color: #ff8c00;
+            color: white;
+            transform: scale(1.05);
+        }
+
+
 
         /* Process Flow Section */
         .process-flow {
@@ -837,11 +887,7 @@
                 padding-right: 0;
             }
             
-            .free-tag {
-                position: static;
-                display: inline-block;
-                margin-top: 10px;
-            }
+
             
             .value-table-row {
                 flex-direction: column;
@@ -957,95 +1003,60 @@
 
         <!-- Value Proposition Section -->
         <section class="value-prop" style="background-color: #ffffff; padding: 80px 0;">
-            <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 40px; color: #333; text-align: center;">WHY BUILD YOUR OWN LASER MACHINE?</h2>
-            <div class="value-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
-                <div class="value-item" style="padding: 30px; background-color: white; border-radius: 8px; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00;">
-                    <div class="value-icon" style="font-size: 48px; margin-bottom: 20px;">💰</div>
-                    <h3 style="font-size: 22px; margin-bottom: 15px; color: #333;">Save Up To 70%</h3>
-                    <p style="color: #666;">Build a professional-grade machine at a fraction of commercial prices</p>
+            <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 60px; color: #333; text-align: center;">WHY BUILD YOUR OWN LASER MACHINE?</h2>
+            <div class="value-grid" style="display: flex; justify-content: center; gap: 40px; max-width: 1200px; margin: 0 auto; flex-wrap: wrap;">
+                <div class="value-item" style="position: relative; padding: 40px 30px; background-color: #ffffff; border-radius: 0; text-align: center; transition: transform 0.3s ease; flex: 1; min-width: 280px; max-width: 350px; border: 2px solid #f0f0f0;">
+                    <div class="value-icon" style="font-size: 56px; margin: 30px 0 20px; display: block;">💰</div>
+                                         <h3 style="font-size: 24px; margin-bottom: 15px; color: #ff8c00; font-weight: 700;">Save Up To 70%</h3>
+                    <p style="color: #666; line-height: 1.6; font-size: 16px;">Build a professional-grade machine at a fraction of commercial prices</p>
                 </div>
-                <div class="value-item" style="padding: 30px; background-color: white; border-radius: 8px; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00;">
-                    <div class="value-icon" style="font-size: 48px; margin-bottom: 20px;">🔧</div>
-                    <h3 style="font-size: 22px; margin-bottom: 15px; color: #333;">Full Customization</h3>
-                    <p style="color: #666;">Design exactly what you need for your specific projects</p>
+                <div class="value-item" style="position: relative; padding: 40px 30px; background-color: #ffffff; border-radius: 0; text-align: center; transition: transform 0.3s ease; flex: 1; min-width: 280px; max-width: 350px; border: 2px solid #f0f0f0;">
+                    <div class="value-icon" style="font-size: 56px; margin: 30px 0 20px; display: block;">🔧</div>
+                                         <h3 style="font-size: 24px; margin-bottom: 15px; color: #ff8c00; font-weight: 700;">Full Customization</h3>
+                    <p style="color: #666; line-height: 1.6; font-size: 16px;">Design exactly what you need for your specific projects</p>
                 </div>
-                <div class="value-item" style="padding: 30px; background-color: white; border-radius: 8px; text-align: center; transition: transform 0.3s ease; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00;">
-                    <div class="value-icon" style="font-size: 48px; margin-bottom: 20px;">📚</div>
-                    <h3 style="font-size: 22px; margin-bottom: 15px; color: #333;">Learn Valuable Skills</h3>
-                    <p style="color: #666;">Gain technical knowledge that helps with maintenance and upgrades</p>
+                <div class="value-item" style="position: relative; padding: 40px 30px; background-color: #ffffff; border-radius: 0; text-align: center; transition: transform 0.3s ease; flex: 1; min-width: 280px; max-width: 350px; border: 2px solid #f0f0f0;">
+                    <div class="value-icon" style="font-size: 56px; margin: 30px 0 20px; display: block;">📚</div>
+                                         <h3 style="font-size: 24px; margin-bottom: 15px; color: #ff8c00; font-weight: 700;">Learn Valuable Skills</h3>
+                    <p style="color: #666; line-height: 1.6; font-size: 16px;">Gain technical knowledge that helps with maintenance and upgrades</p>
                 </div>
             </div>
         </section>
 
         <!-- Recommended Components Section -->
-        <section class="recommended-components" style="background-color: #fff5e6; padding: 80px 0;">
-            <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 50px; color: #333; text-align: center;">GET YOUR COMPONENTS FROM OUR OFFICIAL STORE</h2>
-            <div class="components-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto 40px;">
-                <div class="component-item" style="background-color: white; padding: 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00; transition: transform 0.3s ease;">
-                    <div style="font-size: 36px; margin-bottom: 15px;">⚡</div>
-                    <h3 style="color: #ff8c00; margin-bottom: 10px;">Laser Sources</h3>
-                    <p style="color: #666; margin-bottom: 15px;">JPT & Raycus fiber lasers 20W-12000W</p>
-                    <a href="https://alleriastore.com/collections/laser-source" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Shop Laser Sources →</a>
+        <section class="recommended-components">
+            <h2>GET YOUR COMPONENTS FROM OUR OFFICIAL STORE</h2>
+            <div class="components-grid">
+                <div class="component-item">
+                    <div>⚡</div>
+                    <h3>Laser Sources</h3>
+                    <p>JPT & Raycus fiber lasers 20W-12000W</p>
+                    <a href="https://alleriastore.com/collections/laser-source">Shop Laser Sources →</a>
                 </div>
-                <div class="component-item" style="background-color: white; padding: 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00; transition: transform 0.3s ease;">
-                    <div style="font-size: 36px; margin-bottom: 15px;">🔧</div>
-                    <h3 style="color: #ff8c00; margin-bottom: 10px;">Cutting Heads</h3>
-                    <p style="color: #666; margin-bottom: 15px;">Raytools & Precitec cutting heads</p>
-                    <a href="https://alleriastore.com/collections/laser-cutting-head" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Shop Cutting Heads →</a>
+                <div class="component-item">
+                    <div>🔧</div>
+                    <h3>Cutting Heads</h3>
+                    <p>Raytools & Precitec cutting heads</p>
+                    <a href="https://alleriastore.com/collections/laser-cutting-head">Shop Cutting Heads →</a>
                 </div>
-                <div class="component-item" style="background-color: white; padding: 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00; transition: transform 0.3s ease;">
-                    <div style="font-size: 36px; margin-bottom: 15px;">🎛️</div>
-                    <h3 style="color: #ff8c00; margin-bottom: 10px;">Control Systems</h3>
-                    <p style="color: #666; margin-bottom: 15px;">Raytools control systems & software</p>
-                    <a href="https://alleriastore.com/collections/laser-cutting-software" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Shop Controllers →</a>
+                <div class="component-item">
+                    <div>🎛️</div>
+                    <h3>Control Systems</h3>
+                    <p>Raytools control systems & software</p>
+                    <a href="https://alleriastore.com/collections/laser-cutting-software">Shop Controllers →</a>
                 </div>
-                <div class="component-item" style="background-color: white; padding: 25px; border-radius: 8px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-left: 4px solid #ff8c00; transition: transform 0.3s ease;">
-                    <div style="font-size: 36px; margin-bottom: 15px;">❄️</div>
-                    <h3 style="color: #ff8c00; margin-bottom: 10px;">Cooling Systems</h3>
-                    <p style="color: #666; margin-bottom: 15px;">S&A chillers & cooling solutions</p>
-                    <a href="https://alleriastore.com/collections/laser-chiller" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Shop Chillers →</a>
+                <div class="component-item">
+                    <div>❄️</div>
+                    <h3>Cooling Systems</h3>
+                    <p>S&A chillers & cooling solutions</p>
+                    <a href="https://alleriastore.com/collections/laser-chiller">Shop Chillers →</a>
                 </div>
             </div>
             <div style="text-align: center;">
-                <a href="https://alleriastore.com/" style="background-color: #ff8c00; color: white; font-size: 18px; padding: 15px 40px; font-weight: 700; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(255, 140, 0, 0.2);">BROWSE ALL COMPONENTS</a>
+                <a href="https://alleriastore.com/" style="background-color: #ff8c00; color: white; font-size: 16px; padding: 12px 30px; font-weight: 700; border-radius: 25px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(255, 140, 0, 0.2);">BROWSE ALL COMPONENTS</a>
             </div>
         </section>
 
-        <!-- Free Services Section -->
-        <section class="free-services" style="background-color: #fff5e6; padding: 80px 0;">
-            <h2 style="font-size: 32px; text-transform: uppercase; margin-bottom: 50px; text-align: center;">EVERYTHING YOU GET <span style="color: #ff8c00; font-weight: 700;">100% FREE</span></h2>
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto 40px;">
-                <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
-                    <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">🔍</div>
-                    <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free Component Selection Service</h3>
-                    <p style="color: #666;">Expert advice on choosing the right parts based on your budget and needs. <a href="https://alleriastore.com/" style="color: #ff8c00; text-decoration: none; font-weight: 600;">Browse our complete component catalog →</a></p>
-                    <a href="https://alleriastore.com/pages/contact" style="position: absolute; top: 20px; right: 20px; background-color: #ff8c00; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
-                </div>
-                <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
-                    <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">🛠️</div>
-                    <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free 3-Day Installation Support</h3>
-                    <p style="color: #666;">Live technical assistance throughout your building process</p>
-                    <a href="https://alleriastore.com/pages/sky-fire-support-packages-for-diy-fiber-laser-machines" style="position: absolute; top: 20px; right: 20px; background-color: #ff8c00; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
-                </div>
-                <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
-                    <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">📝</div>
-                    <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free DIY Documentation</h3>
-                    <p style="color: #666;">Complete step-by-step guides, diagrams, and video tutorials</p>
-                    <a href="https://www.youtube.com/@Skyfirelaser" style="position: absolute; top: 20px; right: 20px; background-color: #ff8c00; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
-                </div>
-                <div class="service-box" style="background-color: white; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; border-left: 5px solid #ff8c00; opacity: 1; transform: translateY(0); border-top: 5px solid #fff5e6; border-right: 5px solid #fff5e6; border-bottom: 5px solid #fff5e6;">
-                    <div class="service-icon" style="font-size: 36px; margin-bottom: 20px;">👥</div>
-                    <h3 style="font-size: 20px; margin-bottom: 15px; padding-right: 70px; color: #333;">Free Community Forum Access</h3>
-                    <p style="color: #666;">Join our community of DIY laser enthusiasts for ongoing support</p>
-                    <a href="https://www.facebook.com/groups/998602455597977" style="position: absolute; top: 20px; right: 20px; background-color: #ff8c00; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">FREE</a>
-                </div>
-            </div>
-            <div class="bonus-box" style="background-color: #fff9e6; border-left: 5px solid #e67e22; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: relative; max-width: 1000px; margin: 40px auto 0;">
-                <h3 style="font-size: 28px; margin-bottom: 15px; color: #e67e22; font-weight: 700;">BONUS: DIY Laser Cutting Machine Kits Checklist</h3>
-                <p style="color: #666; font-size: 18px; line-height: 1.6;">Get our comprehensive component checklist to ensure you have everything needed for your build</p>
-                <a href="https://cdn.shopify.com/s/files/1/0651/8158/1563/files/Checklist_for_a_whole_laser_cutting_machine.pdf?v=1715934590" style="position: absolute; top: 20px; right: 20px; background-color: #ff8c00; color: white; padding: 8px 20px; border-radius: 30px; font-weight: 700; font-size: 16px; text-decoration: none; display: inline-block; animation: pulse 2s infinite;">FREE</a>
-            </div>
-        </section>
 
         <!-- Process Flow Section -->
         <section class="process-flow">
@@ -1314,7 +1325,7 @@
                     <a href="https://www.facebook.com/groups/998602455597977" style="color: white; text-decoration: none; font-size: 14px; opacity: 0.9; transition: opacity 0.3s ease;">👥 Community</a>
                 </div>
             </div>
-            <p style="font-size: 14px; color: #e0d6cc;">&copy; 2023 SKY FIRE. All Rights Reserved.</p>
+            <p style="font-size: 14px; color: #e0d6cc;">&copy; 2024 SKY FIRE. All Rights Reserved.</p>
         </footer>
     </div>
     
@@ -1389,11 +1400,7 @@
                 });
             };
             
-            // Highlight free items with pulse effect
-            const freeTags = document.querySelectorAll('.free-tag');
-            freeTags.forEach(tag => {
-                tag.classList.add('pulse');
-            });
+
             
             // Auto-rotate testimonials every 5 seconds
             let currentTestimonial = 0;
@@ -1425,11 +1432,11 @@
             const valueItems = document.querySelectorAll('.value-item');
             valueItems.forEach(item => {
                 item.addEventListener('mouseenter', function() {
-                    this.style.backgroundColor = '#e1f0fa';
+                    this.style.backgroundColor = '#fff5e6';
                 });
                 
                 item.addEventListener('mouseleave', function() {
-                    this.style.backgroundColor = '#f8f8f8';
+                    this.style.backgroundColor = '#ffffff';
                 });
             });
 
